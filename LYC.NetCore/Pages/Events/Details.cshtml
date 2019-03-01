@@ -1,0 +1,53 @@
+﻿@page
+@model LYC.NetCore.Pages.Events.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.Time)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.Time)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.Description)
+
+
+        </dt>
+        <dd>
+            @*@Html.DisplayFor(model => model.Event.Description)*@
+            @Html.Raw(Model.Event.Description)
+            @*<span>Server.HtmlDecode();</span>*@
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.MaxSeats)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.MaxSeats)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Event.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
