@@ -1,0 +1,5 @@
+version: 1.0.{build}
+build:
+  project: LYC.Website.sln
+  verbosity: minimal
+  image: Visual Studio 2017
